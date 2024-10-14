@@ -5,6 +5,8 @@ import './index.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Bag from './routes/Bag.jsx';
 import Home from './routes/Home.jsx';
+import {Provider} from 'react-redux'
+import myntraStore from './store/index.js';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={myntraStore}>
+      <RouterProvider router={router}/>
+    </Provider>
   </StrictMode>,
 )
