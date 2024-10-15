@@ -1,4 +1,16 @@
+import { useDispatch } from "react-redux";
+import { bagActions } from "../store/BagSlice";
+import { AiFillDelete } from "react-icons/ai";
+
+
 const BagItem = ({item}) => {
+
+  const dispatch = useDispatch();
+
+  const handleRemoveFromBag = ()=>{
+    dispatch(bagActions.removeFromBag(item.id))
+  }
+
   return (
     <>
       <div className="bag-item-container">
@@ -25,8 +37,8 @@ const BagItem = ({item}) => {
           </div>
         </div>
 
-        <div className="remove-from-cart" onClick={()=>{console.log("Item removed from cart")}}>
-          X
+        <div className="remove-from-cart" onClick={handleRemoveFromBag}>
+          <AiFillDelete />
         </div>
       </div>
     </>

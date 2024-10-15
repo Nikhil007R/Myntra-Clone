@@ -7,7 +7,7 @@ const FetchItems = ()=>{
 
     const fetchStatus = useSelector(store => store.fetchStatus)
     const dispatch = useDispatch();
-    console.log(fetchStatus);
+    // console.log(fetchStatus);
 
     useEffect(()=> {
         
